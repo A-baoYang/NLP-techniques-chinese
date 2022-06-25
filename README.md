@@ -55,6 +55,7 @@
 - HanLP
 - StanfordNLP
 - SpaCy
+- [JioNLP](https://github.com/dongrixinyu/JioNLP)
 
 ---
 
@@ -86,7 +87,13 @@
 
 #### 條件隨機域 (Condition Random Field, CRF)
 
-分詞器比較： Jieba/ckiptagger/CKIP Transformer/LTP/HanLP/StanfordNLP/SpaCy
+#### 分詞器比較 
+- Jieba/ckiptagger/CKIP Transformer/LTP/HanLP/StanfordNLP/SpaCy
+
+#### [[案例] 關鍵字抽取](nlu/key_phrase_extraction/)
+- 將分詞結果根據重要度再合併，形成更有意義的關鍵短語
+- 使用到 `JioNLP`
+- 計算關鍵詞頻次、佔比、隨時間的變化量，譬如可排序同一時間搜尋量增長最快關鍵詞
 
 ### **詞性標註 (Part-of-speech Tagging)**
 根據語義分類文本中每個詞彙的詞性。
