@@ -1,6 +1,6 @@
 # NLP Techniques (Chinese)
 
-###### [原站](https://www.idataagent.com) | [Medium]() | [Fanpage]() | [LinkedIn]() | Twitter | Cupoy | 方格子 | 知乎 | 微信公眾號 | 掘金
+###### [本站](https://www.idataagent.com) | [Medium]() | [Fanpage]() | [LinkedIn]() | Twitter | [Cupoy](https://www.cupoy.com/user/8E812169) | 方格子 | 知乎 | 微信公眾號 | 掘金
 
 > 本 repo 旨在整理筆者在工作學習 NLP 的過程中曾使用的方法、參考資料及仿作案例，讓更多人瞭解 NLP 的博大精深（困難重重）。若有任何指教歡迎提交 issue 或來信 [martech.tw@gmail.com](mailto:martech.tw@gmail.com)
 
@@ -47,11 +47,11 @@
 -->
 
 首先由於 NLP 開源套件眾多，這邊先盤點功能較為完整的 NLP 開源平台：
-- CKIP
+- CKIP：繁體中文 NLP 工具
   - ckiptagger
   - CKIP Transformer
-- PaddleNLP
-- LTP
+- PaddleNLP：中國第一個 NLP 開源框架
+- LTP：哈爾濱工業大學
 - HanLP
 - StanfordNLP
 - SpaCy
@@ -98,6 +98,12 @@
 ### **詞性標註 (Part-of-speech Tagging)**
 根據語義分類文本中每個詞彙的詞性。
 
+### **關鍵詞抽取 (Keyword Extraction)**
+分詞的其中一個缺點是，切分後最小單位的詞彙讀不出太多洞察，用於文本分析起不到具體作用
+關鍵詞抽取是希望輸出更有鑑別意義的詞彙
+
+參考 JoiNLP 的 `keyphrase_extract` ，透過將分詞結果根據權重和相似性合併
+
 #### BIO Tagging
 
 ### **句子邊界檢測 (Sentence Boundary Detection)**
@@ -134,24 +140,39 @@
 ### **意圖識別 (Intent Detection)**
 分類問題背後的意圖。
 
-### **主題分類 (Topic Modeling)：找出文本隱藏的主題**
+### **主題分類 (Topic Modeling)**
+找出文本隱藏的主題
 
 ### **事件抽取 (Event Extraction)**
 
 
 ---
 
-## Knowledge Fusion 知識融合
+## (III) 知識融合 Knowledge Fusion
 
-### Entity / Relations Alignment 實體關係對齊
+### Synonym Detection 同義詞挖掘
 
-將相似的實體和關係之間合併，避免同義詞在圖譜內（就很像重複節點，會將本該整合的知識分散）
+找到空間中的同義詞合併，避免資訊分散和雜訊
 
 以中文為例：
 
 - 筆畫比對
-- 字符比對
-- 詞向量距離(相似度)
+- 字符比對 (Levenshtein / LCS)
+- 詞向量 (Word2Vec)
+- 語義共現圖譜的節點相似度 (基於圖學 比 W2V 好 可深入了解為什都是基於共現性會有效果差異)
+
+Ref: https://blog.csdn.net/u010960155/article/details/87285292
+
+
+---
+
+
+## (IV) 語言生成 Natural Language Generation
+
+### **文本摘要 (Text Summarization)**
+
+
+
 
 <!--
 ---
