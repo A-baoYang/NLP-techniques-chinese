@@ -1,5 +1,7 @@
 # Text Summarization with Pretrained Encoders, 2019
 
+- [論文原文](https://arxiv.org/abs/1908.08345)
+- [Paperwithcode](https://paperswithcode.com/paper/text-summarization-with-pretrained-encoders)
 - [中文導讀 link (FCU AI Research Cw)](https://fcuai.tw/2021/06/07/text-summarization-with-pretrained-encoders%ef%bc%9a%e5%a6%82%e4%bd%95%e5%b0%87-bert-%e6%87%89%e7%94%a8%e5%9c%a8-text-summarization-task-%e4%b8%8a/)
 
 ## Abstract
