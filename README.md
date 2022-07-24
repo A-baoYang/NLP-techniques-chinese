@@ -4,7 +4,8 @@
 
 > 本 repo 旨在整理筆者在工作學習 NLP 的過程中曾使用的方法、參考資料及仿作案例，讓更多人瞭解 NLP 的博大精深（困難重重）。若有任何指教歡迎提交 issue 或來信 [martech.tw@gmail.com](mailto:martech.tw@gmail.com)
 
-<!--
+---
+
 本 repo 主要介紹中文自然語言處理任務共分為 3 大類：
 
 #### (I) **語意理解 Natural Language Understanding**
@@ -44,7 +45,13 @@
 2. 文本摘要 (Text Summarization)
 3. 問答匹配 (Question-Answering System)：選出最適合回覆用戶提問的答案
 4. 對話系統 (Dialogue System)
--->
+
+以下段落將一一整理其定義和作者練習的實現代碼。
+
+---
+---
+
+### NLP 開源整合平台/套件
 
 首先由於 NLP 開源套件眾多，這邊先盤點功能較為完整的 NLP 開源平台：
 - CKIP：繁體中文 NLP 工具
@@ -136,6 +143,9 @@
 
 ### **情感分類/分數 (Sentiment Prediction)**
 判斷文本的情緒為正面/負面/中立，或以分數形式表示、或分為不同類型（例如：驚訝、憂傷、憤怒...）。
+
+##### `[Datasets]`
+- [GoEmotions](https://ai.googleblog.com/2021/10/goemotions-dataset-for-fine-grained.html)
 
 ### **意圖識別 (Intent Detection)**
 分類問題背後的意圖。
