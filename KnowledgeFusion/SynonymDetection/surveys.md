@@ -31,6 +31,8 @@
                     - [相似詞詞林](https://github.com/fighting41love/funNLP/blob/master/data/%E5%90%8C%E4%B9%89%E8%AF%8D%E5%BA%93%E3%80%81%E5%8F%8D%E4%B9%89%E8%AF%8D%E5%BA%93%E3%80%81%E5%90%A6%E5%AE%9A%E8%AF%8D%E5%BA%93/%E5%90%8C%E4%B9%89%E8%AF%8D%E5%BA%93.txt)
                     - [Synonyms](https://github.com/chatopera/Synonyms)
                     - [KG][OwnThink](https://www.ownthink.com/docs/kg/) 從解釋中配對接近的詞彙
+                    - [台股證券代號列表](https://isin.twse.com.tw/isin/C_public.jsp?strMode=1) + [wikidata](https://www.wikidata.org/wiki/Q713418?uselang=zh-tw)
+                    - [PTT企業綽號列表](https://pttpedia.fandom.com/zh/wiki/PTT%E4%BC%81%E6%A5%AD%E7%B6%BD%E8%99%9F%E5%88%97%E8%A1%A8)
                 - `en_US`
                     - [VerbNet](https://verbs.colorado.edu/verbnet/)
                     - [WordNet](https://wordnet.princeton.edu/download/standoff-files)
@@ -44,7 +46,7 @@
 
 
 ### 評估指標
-來自 \<Mining Entity Synonyms with Effificient Neural Set Generation\> 當作一個**有答案(類別標記)的分群題目**，有三種常見的評估指標：
+**有答案(類別標記)的分群題目**，有三種常用的評估指標：
 - ARI (Adjusted Rand Index) 
   - RI (Rand Index) : Measurement of the similarity between two data clusterings 反映兩類別劃分的重疊程度
   - 由於 Rand Index 無法保證隨機劃分的分群結果 RI 值接近 0，因此提出了 ARI，值域 [-1,1]，越大表示分群效果越好
