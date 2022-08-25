@@ -76,6 +76,14 @@ Improved:
 
 ![](https://i.imgur.com/2aDGBtl.png)
 
+## Evaluation Metrics
+
+- ARI (Adjusted Rand Index)
+- FMI (Mutual Information)
+- NMI (Normalized Mutual Information)
+
+![](https://i.imgur.com/dh4WbiB.png)
+
 ## Comparing Other Methods
 
 - KMeans
@@ -84,14 +92,6 @@ Improved:
 - COP-KMeans
 - SVM+Louvain
 - L2C
-
-## Evaluation Metrics
-
-- ARI (Adjusted Rand Index)
-- FMI (Mutual Information)
-- NMI (Normalized Mutual Information)
-
-![](https://i.imgur.com/dh4WbiB.png)
 
 ## Efficiency Analysis
 
