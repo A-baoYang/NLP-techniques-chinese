@@ -130,3 +130,6 @@ dmypy.json
 
 # Other 
 external_output/
+FiNER/
+model_data/
+logs/
