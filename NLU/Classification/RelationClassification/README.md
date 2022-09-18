@@ -16,8 +16,7 @@ I re-labeled the **FinRE** dataset as `FinRE-v2` with these rules below:
 
 ### Guide
 1. Download dataset and put under `datasets/` folder
-2. Train: run `python demo_train.py`
-3. Predict: run `python demo_predict.py`
+2. Train: run `python run.py`
 
 ---
 
