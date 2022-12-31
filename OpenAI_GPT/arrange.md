@@ -1,0 +1,160 @@
+# ChatGPT & GPT
+
+> UpdateAt: 2022-12-27
+
+1. ChatGPT 爆紅和出圈的現象
+   2. 因為變得更適用大家的日常工作
+   3. 互動性 更像人類
+   4. Code Pliot 功能
+   5. 除了生成能力，還具備基礎知識
+2. 為什麼今年這多 Data & AI 的技術新突破
+   1. Ref: https://medium.com/applied-data-science/2022-we-reviewed-this-years-ai-breakthroughs-1b6de1752f20
+   2. Diffusion Model beats GAN 
+      1. Diffusion Models https://blog.csdn.net/c9Yv2cf9I06K2A9E/article/details/127081128
+      2. GAN https://zhuanlan.zhihu.com/p/162683009
+      Prompt learning 
+3. ChatGPT 的可行落地應用
+4. ChatGPT 的有趣應用
+5. 論工作自動化
+   1. 客服類
+6. 對工程師、DS 的影響、DA/DS 的技能樹變化
+   1. general: 可以用來做小範圍的除錯、解放雙手
+   2. prompt engineering
+   3. NLP: Prompt learning
+      1. https://www.shangyexinzhi.com/article/4687167.html
+      2. OpenAI API ...
+      3. https://blog.csdn.net/qq_27590277/article/details/126801471
+7. ChatGPT 的可信度問題（受到原始訓練集影響這件事）
+   1. 透過 prompt 調整
+8.  值得玩的工具或模型
+   1.  OpenAI GPT-3 finetuning
+   2.  transformers
+   3.  [OpenPrompt](https://github.com/thunlp/OpenPrompt)
+   4.  paddlepaddle
+   5.  RL training
+9.  對資料產業影響
+   1. 擁有越多獨有資料的公司更有優勢
+   2. RPA 、人機協作
+
+
+### Prompt Learning
+
+具体的预训练语言模型分类可以分为如下5类
+- autoregressive-models: 自回归模型，主要代表有 GPT，主要用于生成任务
+- autoencoding-models: 自编码模型，主要代表有 BERT，主要用于NLU任务
+- seq-to-seq-models：序列到序列任务，包含了an encoder 和 a decoder，主要代表有 BART，主要用于基于条件的生成任务，例如翻译，summary等
+- multimodal-models：多模态模型
+- retrieval-based-models：基于召回的模型，主要用于开放域问答
+
+Prompting 方法是现在NLP的第四范式。其中现在NLP的发展史包含
+- Feature Engineering：即使用文本特征，例如词性，长度等，在使用机器学习的方法进行模型训练。（无预训练语言模型）
+- Architecture Engineering：在W2V基础上，利用深度模型，加上固定的embedding。（有固定预训练embedding，但与下游任务无直接关系）
+- Objective Engineering：在bert 的基础上，使用动态的embedding，在加上fine-tuning。（有预训练语言模型，但与下游任务有gap）
+- Prompt Engineering：直接利用与训练语言模型辅以特定的prompt。（有预训练语言模型，但与下游任务无gap）
+
+Readings:
+- https://zhuanlan.zhihu.com/p/442486331
+
+### OpenAI 模型
+> AI generated content models
+
+- 以文產圖: DALL.E
+  - AI擴散運作的方式，就是透過添加雜訊慢慢破壞數據結構，然後再從這些被「拆解」的數據中，透過篩選、「降噪」與隨機採樣等步驟，就可以獲得一張全新的圖。
+  - 使用者輸入各種指令（prompt）組合，人工智慧產生精美程度極高圖片
+  - 利用 CLIP 產生的評分引導模型生成越來越高分的圖像
+- 以圖產文: CLIP
+  - 利用對比讓電腦認識不同圖片的差異，產生判斷，再依此生產文字
+  - 用來管理相簿、以文搜圖（但是人名可以？？
+  - 除了 object detection 還可以做到「概念識別」
+- 以文產 3D 圖: Point-E
+- 音樂融合、風格模仿: MuseNet
+  - 依照使用者輸入的音樂，進一步融合不同風格的演奏
+- 以文產音樂: Jukebox
+  - 只要提供類型、音樂人、歌詞，Jukebox便能夠產出接近典型CD品質的音樂片段(4mins)
+  - 品質比 MuseNet 高，需要長達數小時才能完成 output
+- 以文轉程式碼: Codex
+- 語意理解、語句生成: GPT
+- AI玩電動: Five
+- 微軟文書應用導入相關服務
+
+### 其他 AI 模型
+- 以文產圖: Midjourney AI @Midjourney
+- 以文產圖: Stable Diffusion @Stability AI
+- 以文產影片: Make-A-Video @Meta
+- 以解開的蛋白質生成新的蛋白質 @Generate Biomedicines
+- 結合 GPT-3 和 Stable Diffusion: InstructPix2Pix 根據人類指令編輯圖像的新方法 @UC Berkeley
+  - 要解決 有效的提升作品品質的 prompt 和人類講話方式不太一樣 的問題
+
+SaaS: 
+- 以文產 code: Debuild.co (waitlist)
+- Canva
+- Notion
+- CoPilot
+- Office
+- [GALACTICA](https://galactica.org/explore/)
+
+### ChatGPT 
+
+- Finetuned by RL
+  - 訓練目標：模仿人類對話（從訓練資料中找對應素材拼湊出對話產生回答）（和實際的人類邏輯不同）
+  - 基於 「通用預訓練（generative pre-training，GPT）」改善模型對於語言的理解
+    - GPT 厲害在它能夠基於無監督（unsupervised，指沒有標籤）的數據（但是需要強大算力），建立通用語言模型，接著再針對監督式學習特定任務逐步微調
+  - 模型的訓練者們同時扮演使用者和 ChatGPT 的角色，創造一定數量的數據，讓機器認識到對話的基本策略
+  - 訓練針對機器的回覆 給予建議反饋
+    - 擷取機器撰寫的不同語句，接著「告訴」機器回答內容的品質高低
+      
+   ![](https://imgs.gvm.com.tw/upload/gallery/20221210/125989.jpg)
+
+- AlphaGo belongs to Weak AI, but ChatGPT is more closer to Strong AI
+
+### GPT
+1. 第一代GPT模型，預訓練的數據量達到約5GB，使用到的參數接近1.2億
+2. GPT-2，預訓練的數據量40GB，使用到的參數15億
+   1. [完全图解GPT-2：看完这篇就够了（一）](https://www.jiqizhixin.com/articles/2019-09-03-14)
+3. GPT-3，數據量45TB，參數量也升級到1,750億
+
+
+### ChatGPT 應用
+- [各種 prompt 範例](https://github.com/PlexPt/awesome-chatgpt-prompts-zh)
+- 桌面應用 [ChatGPT for desktop](https://github.com/vincelwt/chatgpt-mac)
+- 插件
+  - [ChatGPT for Google](https://chrome.google.com/webstore/detail/chatgpt-for-google/jgjaeacdkonaoafenlfkkkmbaopkbilf)
+
+  ![](https://i.imgur.com/onymYYG.png)
+
+  - [ChatGPT Assistant](https://chrome.google.com/webstore/detail/chatgpt-assistant/kldepdcdedfibmjnggmolhffdddbphjg/related)
+
+  ![](https://i.imgur.com/JwM2Rmx.png)
+- 各種非官方 API、chatbot 專案
+  - https://github.com/Kamigami55/awesome-chatgpt/blob/main/README-zh-TW.md
+- 語音輸入 ChatGPT
+- 寫程式
+  - VSCode extension
+  - 自動生成 commit
+  - review PR
+  - 解釋錯誤訊息
+- NLP tasks（現在的應用都比較分散、單一，聚合應用是關鍵）
+  - 摘要
+- 文案生成
+- 文書訊息處理自動化
+- 產生 DALL.E 的 prompt XD
+
+
+隱憂
+- 假訊息
+- 代筆
+  - [huggingface GPT output detector](https://huggingface.co/openai-detector/)
+- deepfake contents
+  - 各大社群平台計算可信度分數
+
+
+### Reference:
+
+- https://technews.tw/2022/12/18/open-ai/
+- https://www.gvm.com.tw/article/97461
+- https://github.com/Kamigami55/awesome-chatgpt
+- https://github.com/saharmor/awesome-chatgpt
+- https://www.techbang.com/posts/101861-gpt-3-stable-diffusion
+- https://www.bnext.com.tw/article/73396/ai-diffusion-2022
+- https://www.bnext.com.tw/article/73160/chatgpt
+- 
